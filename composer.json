@@ -40,6 +40,9 @@
         "classmap": [
             "database/seeds",
             "database/factories"
+        ],
+        "files": [
+            "App/helpers.php"
         ]
     },
     "autoload-dev": {
@@ -66,4 +69,5 @@
             "@php artisan ide-helper:meta"
         ]
     }
+
 }

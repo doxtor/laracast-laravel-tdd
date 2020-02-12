@@ -10,7 +10,14 @@
             <p class="text-abu-tulisan text-sm font-normal">
                 <a href="/projects" class="text-abu-tulisan text-sm font-normal no-underline">My Project</a> / {{ $project->title }}
             </p>
-            <a class="button-biru" href="{{ $project->path() . '/edit/' }}">Edit Project</a>
+
+            <div class="flex">
+                @foreach($project->members as $member)
+                    <img src="{{ gravatar_url($member->email) }}" alt="{{ $member->name }}'s avatar" class="rounded-full w-8 mr-2">
+                @endforeach
+                    <img src="{{ gravatar_url($project->owner->email) }}" alt="{{ $project->owner->name }}'s avatar" class="rounded-full w-8 mr-2">
+                    <a class="button-biru ml-4" href="{{ $project->path() . '/edit/' }}">Edit Project</a>
+            </div>
         </div>
     </header>
 
